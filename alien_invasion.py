@@ -18,6 +18,8 @@ class AlienInvasion:
         self.settings.screen_height=self.screen.get_rect().height
         self.settings.screen_width=self.screen.get_rect().width
         pygame.display.set_caption('Alien Invasion')
+        icon = pygame.image.load('images/alien.bmp')
+        pygame.display.set_icon(icon)
         self.bg_color=self.settings.bgcolor
 
         self.stats=GameStats(self)
@@ -122,6 +124,7 @@ class AlienInvasion:
 
         if pygame.sprite.spritecollideany(self.ship,self.aliens):
             self._ship_hit()
+        self._check_alien_bottom()
 
 
     def _ship_hit(self):
@@ -153,7 +156,7 @@ class AlienInvasion:
         number_aliens_x=available_space_x//(2*alien_width)
 
         ship_height=self.ship.rect.height
-        available_space_y=(self.settings.screen_height-(4*alien_height)-ship_height)
+        available_space_y=(self.settings.screen_height-(5*alien_height)-ship_height)
         number_rows=available_space_y//(2*alien_height)
         
         for row_number in range(number_rows):
@@ -165,7 +168,7 @@ class AlienInvasion:
         alien_width,alien_height=alien.rect.size
         alien.x=alien_width+2*alien_width*alien_number
         alien.rect.x=alien.x
-        alien.rect.y=alien_height+2*alien.rect.height*row_number
+        alien.rect.y=alien_height+2*alien.rect.height*row_number+50
         self.aliens.add(alien)
 
     def _check_fleet_edges(self):
