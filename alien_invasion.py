@@ -41,6 +41,20 @@ class AlienInvasion:
                 self._update_alien()
             self._update_screen()
 
+    def _save_high_score(self):
+        try:
+            with open("hs.txt") as hsf:
+                line = hsf.readline().strip()
+                hs = int(line) if line else 0
+        except (FileNotFoundError, ValueError):
+            hs = 0
+            print('read ex2')
+
+        if self.stats.high_score > hs:
+            with open("hs.txt", 'w') as hsf:
+                hsf.write(str(self.stats.high_score))
+                print('writen')
+
 
     def _check_events(self):
         for event in pygame.event.get():
@@ -127,20 +141,21 @@ class AlienInvasion:
         self._check_alien_bottom()
 
 
+
     def _ship_hit(self):
         self.stats.ship_left-=1
         if self.stats.ship_left == 0:
             self.stats.game_active=False
+            self._save_high_score()
             pygame.mouse.set_visible(True)
             return
-        self.stats.ship_left-=1
         self.sb.prep_ships()
         self.bullets.empty()
         self.aliens.empty()
         self._create_fleet()
         self.ship.center_ship()
 
-        sleep(.5)
+        sleep(1)
 
     def _check_alien_bottom(self):
         screen_rect=self.screen.get_rect()
