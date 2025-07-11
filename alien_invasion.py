@@ -18,8 +18,8 @@ class AlienInvasion:
         self.settings.screen_height=self.screen.get_rect().height
         self.settings.screen_width=self.screen.get_rect().width
         pygame.display.set_caption('Alien Invasion')
-        icon = pygame.image.load('images/alien.bmp')
-        pygame.display.set_icon(icon)
+        #icon = pygame.image.load('images/alien.bmp')
+        #pygame.display.set_icon(icon)
         self.bg_color=self.settings.bgcolor
 
         self.stats=GameStats(self)
