@@ -7,7 +7,7 @@ This game is my **first complete Python project**
 
 ## 📸 Screenshot
 
-![Gameplay Screenshot](assets/Pic.png)
+![Gameplay Screenshot](images/Pic.png)
 
 ---
 
