@@ -2,13 +2,12 @@
 
 A classic arcade-style **Python + Pygame** space shooter where you dodge alien fleets, shoot enemies, and try to set the highest score!
 
-This game is my **first complete Python project**, inspired by the *Alien Invasion* project in the book [*Python Crash Course* by Eric Matthes](https://nostarch.com/pythoncrashcourse2e). Assets are adapted from [Flaticon](https://www.flaticon.com/) for educational use.
-
+This game is my **first complete Python project**
 ---
 
 ## 📸 Screenshot
 
-![Gameplay Screenshot](assets/screenshot.png)
+![Gameplay Screenshot](assets/Pic.png)
 
 ---
 
